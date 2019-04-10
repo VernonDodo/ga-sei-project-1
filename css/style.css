@@ -1,6 +1,7 @@
 body {
-    height: 100vh;
+    height: 50vh;
     width: 100vw;
+    margin: 0 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,20 +16,26 @@ div {
 .game-content {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    padding: 0 0 0 0;
 }
 
 .gameplay {
     display: flex;
     flex-direction: column;
     order: 1;
-    width: 80%;
+    width: 70%;
+    background-color: darkgreen;
 }
 
 .sidebar {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 100%;
     height: 100%;
+    align-items: center;
+    margin-right: 15px;
+    padding-right: 20px;
 }
 
 .header {
@@ -60,8 +67,9 @@ div {
     display: flex;
     flex-direction: row;
 }
-#game-title {
-    justify-content: flex-start;
+.button {
+    justify-content: center;
+    width: 75%;
 
 }
 
