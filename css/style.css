@@ -42,10 +42,15 @@ div {
 .header {
     display: flex;
     flex-direction: row;
+    align-items: left;
 }
 
 .title {
     justify-self: left;
+}
+
+h2.header {
+    justify-items: center;
 }
 
 .status {
@@ -67,9 +72,6 @@ div {
     display: flex;
     flex-direction: row;
 }
-.button {
-    justify-content: center;
-    width: 75%;
 
 }
 
