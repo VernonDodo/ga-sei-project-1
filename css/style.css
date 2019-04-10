@@ -1,11 +1,26 @@
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    padding: 0px;
+}
+
+div {
+    padding: 5%;
+}
+
 .game-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .gameplay {
     display: flex;
     flex-direction: column;
+    order: 1;
     width: 80%;
 }
 
@@ -17,24 +32,37 @@
 }
 
 .header {
-    display: flexbox;
+    display: flex;
     flex-direction: row;
 }
 
-
-
-
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0px;
-    padding: 0px;
+.title {
+    justify-self: left;
+    margin-left: 0%
 }
 
+.status {
+    display: flex;
+    flex-direction: row;
+}
+
+.score {
+    float: right; 
+ }
+
+.dealer {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.player {
+    display: flex;
+    flex-direction: row;
+}
 #game-title {
     justify-content: flex-start;
 
 }
 
-#score {
-   justify-content: flex-end; 
-}
+
