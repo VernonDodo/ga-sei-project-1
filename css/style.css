@@ -1,11 +1,19 @@
 .game-content {
-    display: inline-flexbox;
+    display: flex;
     flex-direction: column;
 }
 
 .gameplay {
-    display: flex
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
 
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
 }
 
 .header {
@@ -13,9 +21,7 @@
     flex-direction: row;
 }
 
-.sidebar {
 
-}
 
 
 
