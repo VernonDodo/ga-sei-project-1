@@ -35,3 +35,13 @@ const shuffleCards = function() {
 
 let shuffledDeck = shuffleCards()
 
+const deal = function() {
+    for(let i = 0; i < 2; i++){
+        playerCards.push(shuffledDeck[shuffledDeck.length - 1])
+        console.log(playerCards)
+        shuffledDeck.pop()
+        dealerCards.push(shuffledDeck[shuffledDeck.length - 1])
+        console.log(dealerCards)
+        shuffledDeck.pop()
+    }
+}
