@@ -13,7 +13,7 @@ const buildDeck = function() {
     let newCard = {}
     let newDeck = []
 
-    for(let si = 0; si < suits.length; i++) {
+    for(let si = 0; si < suits.length; si++) {
         for(let ri = 0; ri < ranks.length; ri++) {
             newCard = {suit: suits[si], rank: ranks[ri], value: cardValue[ri]}
             newDeck.push(newCard)
@@ -21,3 +21,17 @@ const buildDeck = function() {
     }
     return newDeck
 }
+
+let deck = buildDeck()
+
+const shuffleCards = function() {
+    let shuffledCards = []
+    for(let i = deck.length - 1; i >= 0; i--) {
+        let randomIndex = Math.floor(Math.random()*(i + 1))
+        shuffledCards.push(deck[randomIndex])
+    }
+    return shuffledCards
+}
+
+let shuffledDeck = shuffleCards()
+
