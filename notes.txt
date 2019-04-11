@@ -1,0 +1,4 @@
+Array shuffling function
+https://www.kirupa.com/html5/shuffling_array_js.htm
+https://www.frankmitchell.org/2015/01/fisher-yates/
+
