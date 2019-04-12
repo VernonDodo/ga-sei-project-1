@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 0;
+    background-color: darkgreen;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,11 +26,21 @@ div {
     display: flex;
     flex-direction: column;
     order: 1;
-    background-color: darkgreen;
-    
 }
 
+.title {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    font-size: 18px;
+    padding-left: 0;
+}
 
+.heading {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
 
 .dealer {
     display: flex;
@@ -55,6 +66,7 @@ div {
     background-color: #ffffff;
     box-shadow: 0 0.0625em 0.125em rgba(0, 0, 0, 0.15);
     border-radius: 0.25em;
+    visibility: hidden;
 }
 
 .controls {
