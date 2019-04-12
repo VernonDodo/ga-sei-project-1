@@ -69,6 +69,10 @@ div {
     visibility: hidden;
 }
 
+.dealer .card {
+    backface-visibility: visible;
+}
+
 .controls {
     display: flex;
     flex-direction: row;
