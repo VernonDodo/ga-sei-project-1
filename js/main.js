@@ -45,3 +45,45 @@ const deal = function() {
         shuffledDeck.pop()
     }
 }
+
+let playerTotal = 0;
+let dealerTotal = 0;
+
+const calculateTotal = function(cardArray[]) {
+    let total = 0;
+    for(let i =0; i < cardArray.length; i++){
+        total += cardArray.value
+    }
+    return total
+}
+
+playerTotal = calculateTotal(playerCards);
+dealerTotal = calculateTotal(dealerCards);
+const blackJack = 21
+
+const hasBlackjack = function() {
+    if playerTotal === blackJack {
+        alert("You've got BlackJack")
+    }
+    if dealerTotal === blackJack {
+        alert("The house has BlackJack")
+    }
+}
+
+const determineResult = function() {
+    if(playerTotal > dealerTotal) {
+        alert("Player wins")
+    } else if (dealerTotal > playerTotal) {
+        alert("Dealer wins")
+    } else {
+        alert("Push")
+    }
+}
+
+const getNextCard = function(){
+    playerCards.push(shuffledDeck[shuffledDeck.length - 1])
+    shuffledDeck.pop();
+}
+    
+
+
