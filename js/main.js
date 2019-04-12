@@ -45,3 +45,8 @@ const deal = function() {
         shuffledDeck.pop()
     }
 }
+
+const showCard = function(){
+    
+
+}
