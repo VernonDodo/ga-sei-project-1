@@ -35,6 +35,19 @@ const shuffleCards = function() {
 
 let shuffledDeck = shuffleCards()
 
+const showCard = function(card){
+   
+
+}
+
+const accumulateTotal = function() {
+
+}
+
+const hasBlackjack(currentScore) {
+    
+}
+
 const deal = function() {
     for(let i = 0; i < 2; i++){
         playerCards.push(shuffledDeck[shuffledDeck.length - 1])
@@ -46,7 +59,4 @@ const deal = function() {
     }
 }
 
-const showCard = function(){
-    
 
-}
