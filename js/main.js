@@ -5,9 +5,13 @@ let suits = ['♠','♣','♥','♦']
 let ranks = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
 let cardValue = [2,3,4,5,6,7,8,9,10,10,10,10,11]
 
-// 
+// These variables keep track of the cards in each player's hand
 let dealerCards = []
 let playerCards = []
+
+/* The round counter is important because the intial round does not get played like subsequent rounds. This is used to determine game logic after an initial round */
+
+let roundCounter = 1; 
 
 
 /* Build the game functionality */
@@ -41,14 +45,6 @@ let shuffledDeck = shuffleCards()
 const showCard = function(card){
    
 
-}
-
-const accumulateTotal = function() {
-
-}
-
-const hasBlackjack(cards[]) {
-    
 }
 
 const deal = function() {
