@@ -48,12 +48,16 @@ const showCard = function(card){
 }
 
 const deal = function() {
+    let newCard = {}
     for(let i = 0; i < 2; i++){
-        playerCards.push(shuffledDeck[shuffledDeck.length - 1])
-        console.log(playerCards)
-        shuffledDeck.pop()
-        dealerCards.push(shuffledDeck[shuffledDeck.length - 1])
-        console.log(dealerCards)
+        newCard = shuffledDeck.pop()
+        if (i % 2 === 0) {
+            playerCards.push(newCard)
+            console.log(playerCards)
+        } else {
+            dealerCards.push(newCard)
+            console.log(dealerCards)
+        }
         shuffledDeck.pop()
     }
 }
@@ -95,6 +99,15 @@ const determineResult = function() {
 const getNextCard = function(cards[]){
     cards.push(shuffledDeck[shuffledDeck.length - 1])
     shuffledDeck.pop();
+}
+
+const hit = function() {
+    getNextCard(playerCards)
+    calculateTotal(playerCards)
+}
+
+const stand = function () {
+    determineResult()
 }
     
 
