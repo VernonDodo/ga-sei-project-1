@@ -47,20 +47,6 @@ const showCard = function(card){
 
 }
 
-const deal = function() {
-    let newCard = {}
-    for(let i = 0; i < 2; i++){
-        newCard = shuffledDeck.pop()
-        if (i % 2 === 0) {
-            playerCards.push(newCard)
-            console.log(playerCards)
-        } else {
-            dealerCards.push(newCard)
-            console.log(dealerCards)
-        }
-        shuffledDeck.pop()
-    }
-}
 
 let playerTotal = 0;
 let dealerTotal = 0;
@@ -76,10 +62,19 @@ const calculateTotal = function(cards[]) {
 playerTotal = calculateTotal(playerCards)
 dealerTotal = calculateTotal(dealerCards)
 
+const updateDisplayScores = function() {
+    $("#dealerHeading .scoreTotal").html(dealerTotal)
+    $("#playerHeading .scoreTotal").html(playerTotal)
+}
+
+const updateInfoMessage = function(text) {
+	$(".info").html(text)
+}
+
 const blackJack = 21
 
 const hasBlackjack = function(cards[]) {
-    if calculateTotal(cards) === blackJack {
+    if (calculateTotal(cards) === blackJack) {
         return true
     } else {
         return false
@@ -88,24 +83,39 @@ const hasBlackjack = function(cards[]) {
 
 const determineResult = function() {
     if (hasBlackjack(dealerCards) && hasBlackjack(playerCards)) {
-        alert("Push")
+        updateInfoMessage("Push")
     } else if (hasBlackjack(dealerCards)){
-        alert("The house has Blackjack!!")
+        updateInfoMessage("The house has Blackjack!!")
     }
     else if (hasBlackjack(playerCards)) {
-        alert("You have Blackjack!")
+        updateInfoMessage("You have Blackjack!")
     } else if (dealerTotal === playerTotal) {
-        alert("Push")
+        updateInfoMessage("Push")
     } else if (dealerTotal > playerTotal){
-        alert("The House wins!")
+        updateInfoMessage("The House wins!")
     } else {
-        alert("Player wins!")
+        updateInfoMessage("Player wins!")
     }
 }
 
-const getNextCard = function(cards[]){
+const getNextCard = function(cards[]) {
     cards.push(shuffledDeck[shuffledDeck.length - 1])
     shuffledDeck.pop();
+}
+
+const deal = function() {
+    let newCard = {}
+    for(let i = 0; i < 2; i++){
+        newCard = shuffledDeck.pop()
+        if (i % 2 === 0) {
+            playerCards.push(newCard)
+            console.log(playerCards)
+        } else {
+            dealerCards.push(newCard)
+            console.log(dealerCards)
+        }
+        shuffledDeck.pop()
+    }
 }
 
 const hit = function() {
@@ -116,6 +126,16 @@ const hit = function() {
 const stand = function () {
     determineResult()
 }
-    
+
+// The following code are for the event handlers for the buttons
+
+$("#dealButton").on("click", deal)
+
+$("#hitButton").on("click", hit)
+
+$("#standButton").on("click", stand )
+
+
+ 
 
 
