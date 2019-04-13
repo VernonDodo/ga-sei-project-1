@@ -1,8 +1,11 @@
 /* Define global variables */
+
+// The following arrays are going to be used to build the card deck
 let suits = ['♠','♣','♥','♦']
 let ranks = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
 let cardValue = [2,3,4,5,6,7,8,9,10,10,10,10,11]
 
+// 
 let dealerCards = []
 let playerCards = []
 
@@ -44,7 +47,7 @@ const accumulateTotal = function() {
 
 }
 
-const hasBlackjack(currentScore) {
+const hasBlackjack(cards[]) {
     
 }
 
@@ -58,5 +61,45 @@ const deal = function() {
         shuffledDeck.pop()
     }
 }
+
+let playerTotal = 0;
+let dealerTotal = 0;
+
+const calculateTotal = function(cards[]) {
+    let total = 0;
+    for(let i =0; i < cards.length; i++){
+        total += cards.value
+    }
+    return total
+}
+
+playerTotal = calculateTotal(playerCards)
+dealerTotal = calculateTotal(dealerCards)
+
+const blackJack = 21
+
+const hasBlackjack = function(cards[]) {
+    if calculateTotal(cards) === blackJack {
+        return true
+    } else {
+        return false
+    }
+}
+
+const determineResult = function() {
+    if(playerTotal > dealerTotal) {
+        alert("Player wins")
+    } else if (dealerTotal > playerTotal) {
+        alert("Dealer wins")
+    } else {
+        alert("Push")
+    }
+}
+
+const getNextCard = function(cards[]){
+    cards.push(shuffledDeck[shuffledDeck.length - 1])
+    shuffledDeck.pop();
+}
+    
 
 
