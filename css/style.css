@@ -42,6 +42,10 @@ div {
     align-items: flex-end;
 }
 
+.scoreTotal{
+    margin-left: 10px;
+}
+
 .dealer {
     display: flex;
     flex-direction: row;

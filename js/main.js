@@ -68,7 +68,7 @@ const updateDisplayScores = function() {
 }
 
 const updateInfoMessage = function(text) {
-	$(".info").html(text)
+	$("#info_message").html(text)
 }
 
 const blackJack = 21
