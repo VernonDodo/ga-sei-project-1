@@ -87,12 +87,19 @@ const hasBlackjack = function(cards[]) {
 }
 
 const determineResult = function() {
-    if(playerTotal > dealerTotal) {
-        alert("Player wins")
-    } else if (dealerTotal > playerTotal) {
-        alert("Dealer wins")
-    } else {
+    if (hasBlackjack(dealerCards) && hasBlackjack(playerCards)) {
         alert("Push")
+    } else if (hasBlackjack(dealerCards)){
+        alert("The house has Blackjack!!")
+    }
+    else if (hasBlackjack(playerCards)) {
+        alert("You have Blackjack!")
+    } else if (dealerTotal === playerTotal) {
+        alert("Push")
+    } else if (dealerTotal > playerTotal){
+        alert("The House wins!")
+    } else {
+        alert("Player wins!")
     }
 }
 
