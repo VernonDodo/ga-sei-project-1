@@ -3,8 +3,8 @@
 // The following arrays are going to be used to build the card deck
 let suits = ['♠','♣','♥','♦']
 let ranks = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
-let cardValue = [2,3,4,5,6,7,8,9,10,10,10,10,11]
-let cardFace = ['../images/cardfaces/2S.png','../images/cardfaces/3S.png','../images/cardfaces/4S.png','../images/cardfaces/5S.png','../images/cardfaces/6S.png','../images/cardfaces/7S.png','../images/cardfaces/8S.png','../images/cardfaces/9S.png','../images/cardfaces/10S.png','../images/cardfaces/JS.png','../images/cardfaces/QS.png','../images/cardfaces/KS.png','../images/cardfaces/AS.png','../images/cardfaces/3C.png','../images/cardfaces/4C.png','../images/cardfaces/5C.png','../images/cardfaces/6C.png','../images/cardfaces/7C.png','../images/cardfaces/8C.png','../images/cardfaces/9C.png','../images/cardfaces/10C.png','../images/cardfaces/JC.png','../images/cardfaces/QC.png','../images/cardfaces/KC.png','../images/cardfaces/AC.png','../images/cardfaces/2H.png','../images/cardfaces/3H.png','../images/cardfaces/4H.png','../images/cardfaces/5H.png','../images/cardfaces/6H.png','../images/cardfaces/7H.png','../images/cardfaces/8H.png','../images/cardfaces/9H.png','../images/cardfaces/10H.png','../images/cardfaces/JH.png','../images/cardfaces/QH.png','../images/cardfaces/KH.png','../images/cardfaces/AH.png','../images/cardfaces/2D.png','../images/cardfaces/3D.png','../images/cardfaces/4D.png','../images/cardfaces/5D.png','../images/cardfaces/6D.png','../images/cardfaces/7D.png','../images/cardfaces/8D.png','../images/cardfaces/9D.png','../images/cardfaces/10D.png','../images/cardfaces/JD.png','../images/cardfaces/QD.png','../images/cardfaces/KD.png','../images/cardfaces/AD.png']
+let cardValues = [2,3,4,5,6,7,8,9,10,10,10,10,11]
+let cardFaces = ['../images/cardfaces/2S.png','../images/cardfaces/3S.png','../images/cardfaces/4S.png','../images/cardfaces/5S.png','../images/cardfaces/6S.png','../images/cardfaces/7S.png','../images/cardfaces/8S.png','../images/cardfaces/9S.png','../images/cardfaces/10S.png','../images/cardfaces/JS.png','../images/cardfaces/QS.png','../images/cardfaces/KS.png','../images/cardfaces/AS.png','../images/cardfaces/3C.png','../images/cardfaces/4C.png','../images/cardfaces/5C.png','../images/cardfaces/6C.png','../images/cardfaces/7C.png','../images/cardfaces/8C.png','../images/cardfaces/9C.png','../images/cardfaces/10C.png','../images/cardfaces/JC.png','../images/cardfaces/QC.png','../images/cardfaces/KC.png','../images/cardfaces/AC.png','../images/cardfaces/2H.png','../images/cardfaces/3H.png','../images/cardfaces/4H.png','../images/cardfaces/5H.png','../images/cardfaces/6H.png','../images/cardfaces/7H.png','../images/cardfaces/8H.png','../images/cardfaces/9H.png','../images/cardfaces/10H.png','../images/cardfaces/JH.png','../images/cardfaces/QH.png','../images/cardfaces/KH.png','../images/cardfaces/AH.png','../images/cardfaces/2D.png','../images/cardfaces/3D.png','../images/cardfaces/4D.png','../images/cardfaces/5D.png','../images/cardfaces/6D.png','../images/cardfaces/7D.png','../images/cardfaces/8D.png','../images/cardfaces/9D.png','../images/cardfaces/10D.png','../images/cardfaces/JD.png','../images/cardfaces/QD.png','../images/cardfaces/KD.png','../images/cardfaces/AD.png']
 
 // These variables keep track of the cards in each player's hand
 let dealerCards = []
@@ -23,7 +23,7 @@ const buildDeck = function() {
 
     for(let si = 0; si < suits.length; si++) {
         for(let ri = 0; ri < ranks.length; ri++) {
-            newCard = {suit: suits[si], rank: ranks[ri], value: cardValue[ri], face: cardFace[ri]}
+            newCard = {suit: suits[si], rank: ranks[ri], value: cardValues[ri], face: cardFaces[ri]}
             newDeck.push(newCard)
         }
     }
@@ -44,6 +44,7 @@ const shuffleCards = function() {
 let shuffledDeck = shuffleCards()
 
 const renderCard = function(card){
+    
    
 
 }
@@ -100,20 +101,21 @@ const determineResult = function() {
 }
 
 const getNextCard = function(cards[]) {
-    cards.push(shuffledDeck[shuffledDeck.length - 1])
+    let newCard = shuffledDeck.pop()
+    cards.push(newCard)
     shuffledDeck.pop();
 }
 
 const deal = function() {
     let newCard = {}
-    for(let i = 0; i < 2; i++){
+    for(let i = 0; i < 4; i++){
         newCard = shuffledDeck.pop()
         if (i % 2 === 0) {
             playerCards.push(newCard)
-            console.log(playerCards)
+            
         } else {
             dealerCards.push(newCard)
-            console.log(dealerCards)
+            
         }
         shuffledDeck.pop()
     }
@@ -125,6 +127,9 @@ const hit = function() {
 }
 
 const stand = function () {
+    while (dealerTotal < 17) {
+        getNextCard(dealerCards)
+    }
     determineResult()
 }
 
