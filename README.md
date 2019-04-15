@@ -6,9 +6,15 @@ This game was designed and implemented as an exercise to showcase my HTML, CSS, 
 
 The game design was basically done on paper, with the wireframing method. This at least gave me an idea of the elements that I wanted on the page, and where I wanted to place them. 
 
+![Wireframe](https://github.com/VernonDodo/ga-sei-project-1/blob/master/resources/project1_wireframe.jpg)
+
 
 
 After wireframing, I proceeded to do the storyboarding or whiteboarding for the game logic.
+
+[Game Design](https://github.com/VernonDodo/ga-sei-project-1/blob/master/resources/Designing%20the%20game.pdf)
+
+[Game Logic](https://github.com/VernonDodo/ga-sei-project-1/blob/master/resources/Developing%20the%20game%20logic.pdf)
 
 
 
