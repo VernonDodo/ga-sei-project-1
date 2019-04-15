@@ -44,7 +44,7 @@ const shuffleCards = function() {
 let shuffledDeck = shuffleCards()
 
 const renderCard = function(card){
-    
+  
     
    
 
@@ -108,17 +108,20 @@ const getNextCard = function(cards) {
 }
 
 const deal = function() {
-    let newCard = {}
+    
     for(let i = 0; i < 4; i++){
-        newCard = shuffledDeck.pop()
         if (i % 2 === 0) {
-            playerCards.push(newCard)
+            playerCards[i] = shuffledDeck.pop()
+            renderCard(playerCards[i])
             
         } else {
-            dealerCards.push(newCard)
-            
+            dealerCards[i] = shuffledDeck.pop()
+            if (i === 0){
+                dealerCards[i].cardBack("../images/cardbacks/redback.png")
+            }
+            renderCard(dealerCards[i]) 
         }
-        shuffledDeck.pop()
+        
     }
 }
 
