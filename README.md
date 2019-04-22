@@ -12,6 +12,13 @@ The visual board was designed using the following wireframe:
 
 ![Blackjack GA Edition Wireframe](/resources/project1_wireframe.jpg)
 
+The game logic was implemented using the following pseudocode.
+
+[Game Design](https://github.com/VernonDodo/ga-sei-project-1/blob/master/resources/Designing%20the%20game.pdf)
+
+[Game Logic](https://github.com/VernonDodo/ga-sei-project-1/blob/master/resources/Developing%20the%20game%20logic.pdf)
+[Project Board] (https://trello.com/b/VzuEW3oT/ga-sei-project-1)
+
 
 ### Storyboarding
 A project board was used to map out the features of the game. Each feature was then implemented and tested, before any other feature was implemented.
