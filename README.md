@@ -15,6 +15,7 @@ After wireframing, I proceeded to do the storyboarding or whiteboarding for the 
 [Game Design](https://github.com/VernonDodo/ga-sei-project-1/blob/master/resources/Designing%20the%20game.pdf)
 
 [Game Logic](https://github.com/VernonDodo/ga-sei-project-1/blob/master/resources/Developing%20the%20game%20logic.pdf)
+[Project Board] (https://trello.com/b/VzuEW3oT/ga-sei-project-1)
 
 
 
