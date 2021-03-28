@@ -1,58 +1,72 @@
 <!DOCTYPE html5>
 
 <head>
-    <title>Blackjack GA Edition</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- BULMA CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Blackjack GA Edition</title>
 </head>
 
 <body>
 
-    <div class="game-content">
-        <div class="gameplay">
-            <div class="heading" id="dealerHeading">
-                <div class="title">Dealer</div>
-                <div class="score">Score</div>
-                <div class="scoreTotal">0</div>
-            </div>
-            <div class="dealer">
-                <div class="card" id="dealer_card1"></div>
-                <div class="card" id="dealer_card2"></div>
-                <div class="card" id="dealer_card3"></div>
-                <div class="card" id="dealer_card4"></div>
-                <div class="card" id="dealer_card5"></div>
-            </div>
-            <div class="info" id="info_panel">
-                <div id="info_message">Welcome to Blackjack. Dealer stands on 17. Please press Deal to proceed.</div>
-            </div>
-            <div class="heading" id="playerHeading">
-                <div class="title">Player</div>
-                <div class="score">Score</div>
-                <div class="scoreTotal">0</div>
-            </div>
-            <div class="player">
-                <div class="card" id="player_card1"></div>
-                <div class="card" id="player_card2"></div>
-                <div class="card" id="player_card3"></div>
-                <div class="card" id="player_card4"></div>
-                <div class="card" id="player_card5"></div>
-            </div>
-            <div class="controls">
-                <w3-button w3-black class="w3-button w3-black" id="dealButton" type="w3-button w3-black" value="Deal">
-                    Deal</w3-button w3-black>
-                <w3-button w3-black class="w3-button w3-black" id="hitButton" type="w3-button w3-black" value="Hit">Hit
-                </w3-button w3-black>
-                <w3-button w3-black class="w3-button w3-black" id="standButton" type="w3-button w3-black" value="Stand">
-                    Stand</w3-button w3-black>
-            </div>
+  <div class="box center game-content">
+    <div class="gameplay">
+      <div class="heading" id="dealerHeading">
+        <h3 class="title">Dealer</h3>
+      </div>
+      <div class="decks" id="dealer">
+        <div class="card" id="dealer_card1">
+          <img src="images/cardfaces/2C.png" alt="First Dealer Card">
         </div>
+        <div class="card" id="dealer_card2">
+          <img src="images/cardfaces/9D.png" alt="Second Dealer Card">
+        </div>
+        <div class="card" id="dealer_card3">
+          <img src="images/cardfaces/5S.png" alt="Third Dealer Card">
+        </div>
+        <div class="card" id="dealer_card4">
+          <img src="images/cardfaces/2H.png" alt="Fourth Dealer Card">
+        </div>
+        <div class="card" id="dealer_card5">
+          <img src="images/cardfaces/3C.png" alt="Fifth Dealer Card">
+        </div>
+      </div>
+
+      <div class="heading" id="playerHeading">
+        <h3 class="title">Player</h3>
+      </div>
+
+      <div class="decks" id="player">
+        <div class="card" id="player_card1">
+          <img src="images/cardfaces/2C.png" alt="First Player Card">
+        </div>
+        <div class="card" id="player_card2">
+          <img src="images/cardfaces/5D.png" alt="Second Player Card">
+        </div>
+        <div class="card" id="player_card3">
+          <img src="images/cardfaces/4S.png" alt="Third Player Card">
+        </div>
+        <div class="card" id="player_card4">
+          <img src="images/cardfaces/3H.png" alt="Fourth Player Card">
+        </div>
+        <div class="card" id="player_card5">
+          <img src="images/cardfaces/8C.png" alt="Fifth Player Card">
+        </div>
+      </div>
+      <div class="controls">
+        <input class="button is-small is-dark" type="submit" value="Deal" id="dealButton">
+        <input class="button is-small is-dark" type="submit" value="Hit" id="hitButton">
+        <input class="button is-small is-dark" type="submit" value="Stand" id="standButton">
+      </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-        <script src="js/main.js"></script>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
