@@ -14,26 +14,28 @@
 
 <body>
 
+  <h1 class="banner" id="banner-message">Welcome to Blackjack</h1>
+
   <div class="box center game-content">
-    <div class="gameplay">
+
       <div class="heading" id="dealerHeading">
         <h3 class="title">Dealer</h3>
       </div>
       <div class="decks" id="dealer">
         <div class="card" id="dealer_card1">
-          <img src="images/cardfaces/2C.png" alt="First Dealer Card">
+          <img src="images/cardbacks/allsuite_red.png" alt="First Dealer Card">
         </div>
         <div class="card" id="dealer_card2">
-          <img src="images/cardfaces/9D.png" alt="Second Dealer Card">
+          <img src="images/cardbacks/allsuite_red.png" alt="Second Dealer Card">
         </div>
-        <div class="card" id="dealer_card3">
-          <img src="images/cardfaces/5S.png" alt="Third Dealer Card">
+        <div class="card" id="dealer_card3" style="visibility: hidden">
+          <img src="images/cardbacks/allsuite_red.png" alt="Third Dealer Card">
         </div>
-        <div class="card" id="dealer_card4">
-          <img src="images/cardfaces/2H.png" alt="Fourth Dealer Card">
+        <div class="card" id="dealer_card4" style="visibility: hidden">
+          <img src="images/cardbacks/allsuite_red.png" alt="Fourth Dealer Card">
         </div>
-        <div class="card" id="dealer_card5">
-          <img src="images/cardfaces/3C.png" alt="Fifth Dealer Card">
+        <div class="card" id="dealer_card5" style="visibility: hidden">
+          <img src="images/cardbacks/allsuite_red.png" alt="Fifth Dealer Card">
         </div>
       </div>
 
@@ -43,27 +45,27 @@
 
       <div class="decks" id="player">
         <div class="card" id="player_card1">
-          <img src="images/cardfaces/2C.png" alt="First Player Card">
+          <img src="images/cardbacks/allsuite_red.png" alt="First Player Card">
         </div>
         <div class="card" id="player_card2">
-          <img src="images/cardfaces/5D.png" alt="Second Player Card">
+          <img src="images/cardbacks/allsuite_red.png" alt="Second Player Card">
         </div>
-        <div class="card" id="player_card3">
-          <img src="images/cardfaces/4S.png" alt="Third Player Card">
+        <div class="card" id="player_card3" style="visibility: hidden">
+          <img src="images/cardbacks/allsuite_red.png" alt="Third Player Card">
         </div>
-        <div class="card" id="player_card4">
-          <img src="images/cardfaces/3H.png" alt="Fourth Player Card">
+        <div class="card" id="player_card4" style="visibility: hidden">
+          <img src="images/cardbacks/allsuite_red.png" alt="Fourth Player Card">
         </div>
-        <div class="card" id="player_card5">
-          <img src="images/cardfaces/8C.png" alt="Fifth Player Card">
+        <div class="card" id="player_card5" style="visibility: hidden">
+          <img src="images/cardbacks/allsuite_red.png" alt="Fifth Player Card">
         </div>
       </div>
       <div class="controls">
-        <input class="button is-small is-dark" type="submit" value="Deal" id="dealButton">
-        <input class="button is-small is-dark" type="submit" value="Hit" id="hitButton">
-        <input class="button is-small is-dark" type="submit" value="Stand" id="standButton">
+        <input onclick="start()" class="button is-small is-dark" type="button" value="Start" id="startButton">
+        <input onclick="hit()" class="button is-small is-dark" type="button" value="Hit" id="hitButton">
+        <input onclick="stand()" class="button is-small is-dark" type="button" value="Stand" id="standButton">
       </div>
-    </div>
+
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
