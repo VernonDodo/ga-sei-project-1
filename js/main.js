@@ -4,8 +4,8 @@
 const suits = ['♠', '♣', '♥', '♦']
 const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 const cardValues = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11]
-const cardFaces = ['images/cardfaces/2S.png', 'images/cardfaces/3S.png', 'images/cardfaces/4S.png', 'images/cardfaces/5S.png', 'images/cardfaces/6S.png', 'images/cardfaces/7S.png', 'images/cardfaces/8S.png', 'images/cardfaces/9S.png', 'images/cardfaces/10S.png', 'images/cardfaces/JS.png', 'images/cardfaces/QS.png', 'images/cardfaces/KS.png', 'images/cardfaces/AS.png', 'images/cardfaces/3C.png', 'images/cardfaces/4C.png', 'images/cardfaces/5C.png', 'images/cardfaces/6C.png', 'images/cardfaces/7C.png', 'images/cardfaces/8C.png', 'images/cardfaces/9C.png', 'images/cardfaces/10C.png', 'images/cardfaces/JC.png', 'images/cardfaces/QC.png', 'images/cardfaces/KC.png', 'images/cardfaces/AC.png', 'images/cardfaces/2H.png', 'images/cardfaces/3H.png', 'images/cardfaces/4H.png', 'images/cardfaces/5H.png', 'images/cardfaces/6H.png', 'images/cardfaces/7H.png', 'images/cardfaces/8H.png', 'images/cardfaces/9H.png', 'images/cardfaces/10H.png', 'images/cardfaces/JH.png', 'images/cardfaces/QH.png', 'images/cardfaces/KH.png', 'images/cardfaces/AH.png', 'images/cardfaces/2D.png', 'images/cardfaces/3D.png', 'images/cardfaces/4D.png', 'images/cardfaces/5D.png', 'images/cardfaces/6D.png', 'images/cardfaces/7D.png', 'images/cardfaces/8D.png', 'images/cardfaces/9D.png', 'images/cardfaces/10D.png', 'images/cardfaces/JD.png', 'images/cardfaces/QD.png', 'images/cardfaces/KD.png', 'images/cardfaces/AD.png']
-
+const cardFaces = ['images/cardfaces/default/2S.png', 'images/cardfaces/default/3S.png', 'images/cardfaces/default/4S.png', 'images/cardfaces/default/5S.png', 'images/cardfaces/default/6S.png', 'images/cardfaces/default/7S.png', 'images/cardfaces/default/8S.png', 'images/cardfaces/default/9S.png', 'images/cardfaces/default/10S.png', 'images/cardfaces/default/JS.png', 'images/cardfaces/default/QS.png', 'images/cardfaces/default/KS.png', 'images/cardfaces/default/AS.png', 'images/cardfaces/default/3C.png', 'images/cardfaces/default/4C.png', 'images/cardfaces/default/5C.png', 'images/cardfaces/default/6C.png', 'images/cardfaces/default/7C.png', 'images/cardfaces/default/8C.png', 'images/cardfaces/default/9C.png', 'images/cardfaces/default/10C.png', 'images/cardfaces/default/JC.png', 'images/cardfaces/default/QC.png', 'images/cardfaces/default/KC.png', 'images/cardfaces/default/AC.png', 'images/cardfaces/default/2H.png', 'images/cardfaces/default/3H.png', 'images/cardfaces/default/4H.png', 'images/cardfaces/default/5H.png', 'images/cardfaces/default/6H.png', 'images/cardfaces/default/7H.png', 'images/cardfaces/default/8H.png', 'images/cardfaces/default/9H.png', 'images/cardfaces/default/10H.png', 'images/cardfaces/default/JH.png', 'images/cardfaces/default/QH.png', 'images/cardfaces/default/KH.png', 'images/cardfaces/default/AH.png', 'images/cardfaces/default/2D.png', 'images/cardfaces/default/3D.png', 'images/cardfaces/default/4D.png', 'images/cardfaces/default/5D.png', 'images/cardfaces/default/6D.png', 'images/cardfaces/default/7D.png', 'images/cardfaces/default/8D.png', 'images/cardfaces/default/9D.png', 'images/cardfaces/default/10D.png', 'images/cardfaces/default/JD.png', 'images/cardfaces/default/QD.png', 'images/cardfaces/default/KD.png', 'images/cardfaces/default/AD.png']
+let cardBack = "images/cardbacks/allsuite_red.png"
 const buildDeck = function() {
   let newCard = {}
   let newDeck = []
@@ -16,7 +16,8 @@ const buildDeck = function() {
         suit: suits[si],
         rank: ranks[ri],
         value: cardValues[ri],
-        face: cardFaces[ri]
+        face: cardFaces[ri],
+        back: cardBack
       }
       newDeck.push(newCard)
     }
@@ -38,27 +39,16 @@ const shuffleDeck = function(deck) {
 let gameDeck = shuffleDeck(deck);
 
 // These variables keep track of the cards in each player's hand
-let dealerCards = $(".dealer .card")
-let playerCards = $(".player .card")
+let dealerCards = $("#dealer .card");
+let playerCards = $("#player .card");
 
-/* The round counter is important because the intial round does not get played like subsequent rounds. This is used to determine game logic after an initial round */
+// This counter keeps track of how many times cards are being dealt
+let dealCounter = 1;
 
-let roundCounter = 1;
+let dealerStatus = "hit";
 
 
 /* Build the game functionality */
-
-
-
-
-
-
-const renderCard = function(card) {
-
-
-
-
-}
 
 
 let playerTotal = 0;
@@ -82,13 +72,33 @@ const updateInfoMessage = function(text) {
 
 const blackJack = 21
 
-const start = function() {
-  console.log("Start button has been pressed");
-}
+let dealButton = $("#dealButton");
 
-const hit = function() {
+dealButton.click(function() {
+  let drawnCard = gameDeck.pop()
+  for (let i = 0; i < 2; i++) {
+    if (i === 1) {
+      $("#dealer_card" +dealCounter + "  img").attr("src", drawnCard.back);
+    } else {
+      $("#dealer_card" +dealCounter + "  img").attr("src", drawnCard.face);
+  }
+  drawnCard = gameDeck.pop();
+  $("#player_card" +dealCounter + "  img").attr("src", drawnCard.face);
+  dealCounter++;
+  }
+});
+
+let hitButton = $("#hitButton");
+
+hitButton.click(function() {
   console.log("Hit button has been pressed");
-}
+  let drawnCard = gameDeck.pop();
+  $("#player_card" + dealCounter).attr("src", drawnCard.face);
+  $("player_card" + dealCounter).css({
+    "visibility": "visible"
+  });
+  dealCounter++;
+});
 
 const stand = function() {
   console.log("Stand button has been pressed");
@@ -96,14 +106,22 @@ const stand = function() {
 
 // The following code are for the event handlers for the buttons
 
-let startButton = $("#startButton");
 
-let hitButton = $("#hitButton");
+
+
+
+hitButton.click(function() {
+  console.log("Hit button was clicked");
+});
 
 let standButton = $("#standButton");
 
-// startButton.click(start());
-//
+standButton.click(function() {
+  console.log("Stand button was clicked");
+});
+
+// dealButton.click(deal());
+// //
 // hitButton.click(hit());
-//
-// standButton.click(stand());
+// //
+// // standButton.click(stand());
