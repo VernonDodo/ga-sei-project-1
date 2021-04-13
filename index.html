@@ -1,0 +1,74 @@
+<!DOCTYPE html5>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- BULMA CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Blackjack GA Edition</title>
+</head>
+
+<body>
+
+  <h1 class="banner" id="banner-message">Welcome to Blackjack</h1>
+
+  <div class="box center game-content">
+
+      <div class="heading" id="dealerHeading">
+        <h3 class="title">Dealer</h3>
+      </div>
+      <div class="decks" id="dealer">
+        <div class="card" id="dealer_card1">
+          <img src="images/cardbacks/allsuite_red.png" alt="First Dealer Card">
+        </div>
+        <div class="card" id="dealer_card2">
+          <img src="images/cardbacks/allsuite_red.png" alt="Second Dealer Card">
+        </div>
+        <div class="card" id="dealer_card3" style="visibility: hidden">
+          <img src="images/cardbacks/allsuite_red.png" alt="Third Dealer Card">
+        </div>
+        <div class="card" id="dealer_card4" style="visibility: hidden">
+          <img src="images/cardbacks/allsuite_red.png" alt="Fourth Dealer Card">
+        </div>
+        <div class="card" id="dealer_card5" style="visibility: hidden">
+          <img src="images/cardbacks/allsuite_red.png" alt="Fifth Dealer Card">
+        </div>
+      </div>
+
+      <div class="heading" id="playerHeading">
+        <h3 class="title">Player</h3>
+      </div>
+
+      <div class="decks" id="player">
+        <div class="card" id="player_card1">
+          <img src="images/cardbacks/allsuite_red.png" alt="First Player Card">
+        </div>
+        <div class="card" id="player_card2">
+          <img src="images/cardbacks/allsuite_red.png" alt="Second Player Card">
+        </div>
+        <div class="card" id="player_card3" style="visibility: hidden">
+          <img src="images/cardbacks/allsuite_red.png" alt="Third Player Card">
+        </div>
+        <div class="card" id="player_card4" style="visibility: hidden">
+          <img src="images/cardbacks/allsuite_red.png" alt="Fourth Player Card">
+        </div>
+        <div class="card" id="player_card5" style="visibility: hidden">
+          <img src="images/cardbacks/allsuite_red.png" alt="Fifth Player Card">
+        </div>
+      </div>
+      <div class="controls">
+        <button class="button is-small is-dark deal" type="button" id="dealButton">Deal</button>
+        <button class="button is-small is-dark hit" type="button" id="hitButton">Hit</button>
+        <button class="button is-small is-dark stand" type="button" id="standButton">Stand</button>
+      </div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

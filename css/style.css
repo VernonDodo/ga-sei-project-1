@@ -1,0 +1,108 @@
+body {
+  align-items: center;
+  background-color: #9ede73;
+  background-image: url("../images/backgrounds/bigstock-poker-table-background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+}
+
+div {
+  padding: 10%;
+}
+
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.game-content {
+  background-image: url("../images/backgrounds/pala_casino.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  border-radius: .75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-top: .0625rem;
+  margin-top: .0625rem;
+  margin-bottom: .0625rem;
+  padding-bottom: .0625rem;
+}
+
+.title {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  font-size: 1.125rem;
+  padding-left: 0;
+}
+
+.decks {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1px;
+  max-width: 4em;
+  max-height: 5.5em;
+  border-radius: 0.25em;
+}
+
+.controls {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10%;
+}
+
+.button {
+  max-width: 30%;
+  max-height: 10%;
+  border-color: white;
+
+}
