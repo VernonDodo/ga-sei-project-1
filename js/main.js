@@ -86,6 +86,9 @@ dealButton.click(function() {
   $("#player_card" +dealCounter + "  img").attr("src", drawnCard.face);
   dealCounter++;
   }
+  $("#dealButton").attr("disabled", "true");
+  $("#hitButton").removeAttr("disabled");
+  $("#standButton").removeAttr("disabled");
 });
 
 let hitButton = $("#hitButton");
@@ -93,35 +96,16 @@ let hitButton = $("#hitButton");
 hitButton.click(function() {
   console.log("Hit button has been pressed");
   let drawnCard = gameDeck.pop();
-  $("#player_card" + dealCounter).attr("src", drawnCard.face);
-  $("player_card" + dealCounter).css({
-    "visibility": "visible"
-  });
+  $("#player_card" + dealCounter + " img").attr("src", drawnCard.face);
+  $("player_card" + dealCounter).removeAttr("style");
   dealCounter++;
 });
 
-const stand = function() {
-  console.log("Stand button has been pressed");
-}
-
-// The following code are for the event handlers for the buttons
-
-
-
-
-
-hitButton.click(function() {
-  console.log("Hit button was clicked");
-});
 
 let standButton = $("#standButton");
 
 standButton.click(function() {
   console.log("Stand button was clicked");
+  $("#hitButton").attr("disabled","true");
+  $("#standButton").attr("disabled","true");
 });
-
-// dealButton.click(deal());
-// //
-// hitButton.click(hit());
-// //
-// // standButton.click(stand());
